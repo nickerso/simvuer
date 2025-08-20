@@ -26,19 +26,6 @@
         </el-radio-group>
       </div>
       -->
-      <div ref="dropArea" class="drop-area" @dragenter.prevent="onDragEnter" @dragover.prevent @drop.prevent="onDrop" @dragleave.prevent="onDragLeave">
-        You can drag and drop a COMBINE archive here.
-      </div>
-      <el-dialog v-model="dragAndDropWarningVisible" width="352">
-        <span>Please only drag and drop one COMBINE archive.</span>
-        <template #footer>
-          <div class="dialog-footer">
-            <el-button type="primary" @click="dragAndDropWarningVisible = false">
-              OK
-            </el-button>
-          </div>
-        </template>
-      </el-dialog>
     </div>
     <hr />
     <div v-for="resource in resources()" v-bind:key="resource.id">
