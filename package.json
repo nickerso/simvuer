@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@abi-software/simulationvuer": "^2.0.14",
-    "element-plus": "^2.10.7",
-    "vue": "^3.5.13"
+    "element-plus": "2.8.4",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.0.0",

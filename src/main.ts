@@ -1,10 +1,19 @@
 import './assets/main.css'
 
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import * as VueRouter from "vue-router";
+import App from "./App.vue";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 
-const app = createApp(App)
-app.use(ElementPlus)
-app.mount('#app')
+const routes = [{ path: "/", component: App }];
+const router = VueRouter.createRouter({
+  // Provide the history implementation to use. We are using the hash history for simplicity here.
+  history: VueRouter.createWebHashHistory(),
+  routes,
+});
+const app = createApp(App);
+
+app.use(router);
+app.use(ElementPlus);
+app.mount("#app");
