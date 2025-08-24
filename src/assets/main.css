@@ -25,6 +25,26 @@
   }
 }
 
+/*
+ * helper text
+ */
+div.helper-text {
+  font-family: Asap, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/*
+ * Resource selector
+ */
+ div.resource-selector {
+  text-align: left;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
 /* 
  * SimulationVuerInput.vue
  */
