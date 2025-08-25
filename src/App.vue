@@ -106,8 +106,7 @@ export default {
         { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },*/
         {
           id: "glut-p",
-          // omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
-          omex: "https://raw.githubusercontent.com/nickerso/simvuer/refs/heads/main/omex-archives/GLUT_ss_oi_flat.cellml.omex",
+          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
           documentation: "https://models.physiomeproject.org/workspace/d5d",
           image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
