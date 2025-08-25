@@ -84,17 +84,26 @@ export default {
           documentation: "https://doi.org/10.26275/r4zj-yyzw",
           image: "https://assets.discover.pennsieve.io/dataset-assets/135/8/banner.jpg"
         },
-        { id: "157p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/157.omex", label: "157", description: "COMBINE archive" },
-        { id: "lorenz-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex", label: "Lorenz", description: "COMBINE archive" },
+        { 
+          id: "sparc-dataset-157", 
+          omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/157.omex", 
+          label: "SAN + brain stem", 
+          description: "CellML version of the Fabbri et al. 2017 human sinoatrial node (SAN) cell model and an ODE-based version of the Gerstner & Kistler 2002 brain stem (spike response) model combined to demonstrate the effect of brain stem activity on heart rate. Here we can explore the effect of changing the level of brain stem activity on the SAN action potential.",
+          documentation: "https://doi.org/10.26275/lj3f-erhp",
+          image: "https://assets.discover.pennsieve.io/dataset-assets/135/8/banner.jpg"
+        },
+        /*
+        { id: "lorenz-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex", label: "Lorenz", description: "COMBINE archive" },*/
         { 
           id: "ttnp04-p",
           omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/tt04.omex",
           documentation: "https://models.physiomeproject.org/e/80c",
           image: "https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png",
-          label: "TT04", 
-          description: "ten Tusscher 2004 human ventricular cell model"
+          label: "Human ventricular cell", 
+          description: "A model for human ventricular tissue, K.H.W.J. ten Tusscher, D. Noble, P.J. Noble, and A.V. Panfilov, 2004, American Journal of Physiology , 286, H1573-H1589. PubMed ID: 14656705. Here we explore the response to changing the stimulation frequency."
         },
-        { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },
+        /*
+        { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },*/
         {
           id: "glut-p",
           // omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
