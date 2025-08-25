@@ -201,7 +201,7 @@ div.simulation-experiment-header {
 }
 
 div.simulation-experiment-description {
-  margin-right: 120px;
+  margin-right: 220px;
   font-size: 14px;
   text-align: left;
 }
