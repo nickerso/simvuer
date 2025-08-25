@@ -97,11 +97,12 @@ export default {
         { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },
         {
           id: "glut-p",
-          omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
+          // omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
+          omex: "https://raw.githubusercontent.com/nickerso/simvuer/refs/heads/main/omex-archives/GLUT_ss_oi_flat.cellml.omex",
           documentation: "https://models.physiomeproject.org/workspace/d5d",
           image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
-          description: "Explore this glucose transporter model in the following ways: 1) As 𝜅₁ increases, 𝑘ₘ¹ and 𝑘ₘ² also increase, and the Michaelis-Menten curve saturates at high extracellular glucose concentrations; 2) As the intracelluar glucose concentration increases, the flow v shifts from positive (indicating transport from extracellular to intracellular) to negative (indicating transport from intracellular to extracellular)."
+          description: "Explore this glucose transporter model in the following ways: 1) As 𝜅₁ increases, 𝑘ₘ¹ and 𝑘ₘ² also increase, and the Michaelis-Menten curve saturates at high extracellular glucose concentrations; 2) As the intracelluar glucose concentration increases, the flow v shifts from positive (indicating transport from extracellular to intracellular) to negative (indicating transport from intracellular to extracellular); and 3) As K_Ai increases, a negative flow rate (from intracellular to extracellular) is observed when gᵢ = gₒ, indicating thermodynamically inconsistent parameters."
         }
       ],
       activeResource: 0,
