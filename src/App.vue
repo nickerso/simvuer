@@ -68,7 +68,7 @@
 <script>
 import { SimulationVuer } from "@abi-software/simulationvuer";
 import { ElRadioButton, ElRadioGroup, ElDialog } from "element-plus";
-import "@abi-software/plotvuer/dist/style.css";
+import "@abi-software/simulationvuer/dist/style.css";
 
 export default {
   name: "App",
