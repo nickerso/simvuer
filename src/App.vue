@@ -107,7 +107,7 @@ export default {
         {
           id: "glut-p",
           omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
-          documentation: "https://models.physiomeproject.org/workspace/d5d",
+          documentation: "https://models.physiomeproject.org/e/d5d",
           image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
           description: "Explore this glucose transporter model in the following ways: 1) As 𝜅₁ increases, 𝑘ₘ¹ and 𝑘ₘ² also increase, and the Michaelis-Menten curve saturates at high extracellular glucose concentrations; 2) As the intracelluar glucose concentration increases, the flow v shifts from positive (indicating transport from extracellular to intracellular) to negative (indicating transport from intracellular to extracellular); and 3) As K_Ai increases, a negative flow rate (from intracellular to extracellular) is observed when gᵢ = gₒ, indicating thermodynamically inconsistent parameters."
