@@ -22,19 +22,13 @@
     <hr />
     <div v-for="resource in resources()" v-bind:key="resource.id">
       <div v-if="isResourceInitialised(resource.id)" v-show="resource.id === activeResource">
-        <div v-if="typeof resource.id === 'number'">
-          <span>
-            <strong>Dataset <a :href="datasetUrl(resource.id)" target="_blank">{{ resource.id }}</a>:</strong> {{ resource.description }}
-          </span>
-          <hr />
-        </div>
         <div class="simulation-experiment-header">
-          <span>
-            <strong>Simulation experiment <a :href="resource.id" target="_blank">{{ resource.label }}</a>:</strong> {{ resource.description }}
-          </span>
+          <div class="simulation-experiment-description">
+            <strong>Simulation experiment <el-link v-external :href="resource.documentation">{{ resource.label }}</el-link>:</strong> {{ resource.description }}
+          </div>
           <!-- Thumbnail -->
           <img
-            src="https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png"
+            :src="resource.image"
             alt="Thumbnail"
             class="thumbnail"
             @click="modelDialogVisible = true"
@@ -47,13 +41,13 @@
             align-center
           >
             <img
-              src="https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png"
+              :src="resource.image"
               alt="Full Image"
               class="full-image"
             />
           </el-dialog>
         </div>
-        <SimulationVuer :apiLocation="apiLocation" :id="resource.id" style="height: 640px;" />
+        <SimulationVuer :apiLocation="apiLocation" :id="resource.omex" style="height: 640px;" />
       </div>
     </div>
     <div v-if="activeResource === -1">
@@ -83,17 +77,32 @@ export default {
       apiLocation: "",
       combineArchives: [],
       datasetUrls: [
-        { id: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/135.omex", label: "135", description: "COMBINE archive" },
-        { id: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/157.omex", label: "157", description: "COMBINE archive" },
-        { id: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex", label: "Lorenz", description: "COMBINE archive" },
+        { id: "sparc-dataset-135", 
+          omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/135.omex", 
+          label: "Human SAN", 
+          description: "We use the COMBINE archive for an action potential model of the human sinoatrial node cell model and simulation experiment from a dataset published on the SPARC Portal. In this simulation experiment, the effect of stellate or vagal nerve stimulation on the action potential is explored.",
+          documentation: "https://doi.org/10.26275/r4zj-yyzw",
+          image: "https://assets.discover.pennsieve.io/dataset-assets/135/8/banner.jpg"
+        },
+        { id: "157p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/157.omex", label: "157", description: "COMBINE archive" },
+        { id: "lorenz-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex", label: "Lorenz", description: "COMBINE archive" },
         { 
-          id: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/tt04.omex",
+          id: "ttnp04-p",
+          omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/tt04.omex",
           documentation: "https://models.physiomeproject.org/e/80c",
           image: "https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png",
           label: "TT04", 
           description: "ten Tusscher 2004 human ventricular cell model"
         },
-        { id: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },
+        { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },
+        {
+          id: "glut-p1",
+          omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex",
+          documentation: "https://models.physiomeproject.org/workspace/d5c",
+          image: "https://models.physiomeproject.org/workspace/d5c/rawfile/d12a060fe562a5289b8e256a4bd6dde6d8d46add/GLUT_BG.png",
+          label: "GLUT",
+          description: "Glucose transporter model"
+        }
       ],
       activeResource: 0,
       initialisedResources: [],
@@ -182,6 +191,12 @@ div.simulation-experiment-header {
   background-color: #f9f2fc;
 }
 
+div.simulation-experiment-description {
+  margin-right: 120px;
+  font-size: 14px;
+  text-align: left;
+}
+
 .thumbnail {
   cursor: pointer;
   border-radius: 6px;
@@ -196,7 +211,7 @@ div.simulation-experiment-header {
   background-color: white;
 }
 .thumbnail:hover {
-  transform: scale(2.5);
+  transform: scale(4);
 }
 
 .full-image {
