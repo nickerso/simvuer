@@ -96,12 +96,12 @@ export default {
         },
         { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },
         {
-          id: "glut-p1",
-          omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex",
-          documentation: "https://models.physiomeproject.org/workspace/d5c",
-          image: "https://models.physiomeproject.org/workspace/d5c/rawfile/d12a060fe562a5289b8e256a4bd6dde6d8d46add/GLUT_BG.png",
+          id: "glut-p",
+          omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
+          documentation: "https://models.physiomeproject.org/workspace/d5d",
+          image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
-          description: "Glucose transporter model"
+          description: "Explore this glucose transporter model in the following ways: 1) As 𝜅₁ increases, 𝑘ₘ¹ and 𝑘ₘ² also increase, and the Michaelis-Menten curve saturates at high extracellular glucose concentrations; 2) As the intracelluar glucose concentration increases, the flow v shifts from positive (indicating transport from extracellular to intracellular) to negative (indicating transport from intracellular to extracellular)."
         }
       ],
       activeResource: 0,
