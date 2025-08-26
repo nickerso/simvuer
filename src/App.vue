@@ -111,6 +111,14 @@ export default {
           image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
           description: "Explore this glucose transporter model in the following ways: 1) As 𝜅₁ increases, 𝑘ₘ¹ and 𝑘ₘ² also increase, and the Michaelis-Menten curve saturates at high extracellular glucose concentrations; 2) As the intracelluar glucose concentration increases, the flow v shifts from positive (indicating transport from extracellular to intracellular) to negative (indicating transport from intracellular to extracellular); and 3) As K_Ai increases, a negative flow rate (from intracellular to extracellular) is observed when gᵢ = gₒ, indicating thermodynamically inconsistent parameters."
+        },
+        {
+          id: "epithelial-p",
+          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d5f/Epithelial%20cell%20v1.cellml/download_omex",
+          documentation: "https://models.physiomeproject.org/e/d5f/Epithelial%20cell%20v1.cellml/view",
+          image: "https://models.physiomeproject.org/e/d5f/model-diagram.png",
+          label: "Epithelial cell transport",
+          description: "This epithelial cell model describes the transport of glucose and sodium ions across the apical and basolateral membranes of a generic epithelial cell."
         }
       ],
       activeResource: 0,
