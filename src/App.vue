@@ -114,11 +114,19 @@ export default {
         },
         {
           id: "epithelial-p",
-          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d5f/Epithelial%20cell%20v1.cellml/download_omex",
-          documentation: "https://models.physiomeproject.org/e/d5f/Epithelial%20cell%20v1.cellml/view",
-          image: "https://models.physiomeproject.org/e/d5f/model-diagram.png",
+          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d62/Epithelial%20cell%20v1.cellml/download_omex",
+          documentation: "https://models.physiomeproject.org/e/d62/Epithelial%20cell%20v1.cellml/view",
+          image: "https://models.physiomeproject.org/e/d62/model-diagram.png",
           label: "Epithelial cell transport",
           description: "This epithelial cell model describes the transport of glucose and sodium ions across the apical and basolateral membranes of a generic epithelial cell."
+        },
+        {
+          id: "epithelial-p2",
+          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d62/Na-Glc-BC/epithelial-cell-capilliary-bc.cellml/download_omex",
+          documentation: "https://models.physiomeproject.org/e/d62/Na-Glc-BC/epithelial-cell-capilliary-bc.cellml/view",
+          image: "https://models.physiomeproject.org/e/d62/Na-Glc-BC/model-diagram-with-bc.png",
+          label: "Epithelial cell transport + BC",
+          description: "This epithelial cell model describes the transport of glucose and sodium ions across the apical and basolateral membranes of a generic epithelial cell. In this version, a configurable step change in the blood capillary soduim concentration and/or duct glucose concentration can be applied."
         }
       ],
       activeResource: 0,
