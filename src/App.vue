@@ -106,7 +106,7 @@ export default {
         { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },*/
         {
           id: "glut-p",
-          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
+          omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
           documentation: "https://models.physiomeproject.org/e/d5d",
           image: "https://models.physiomeproject.org/e/d5d/GLUT_BG.png",
           label: "GLUT",
@@ -114,7 +114,7 @@ export default {
         },
         {
           id: "epithelial-p",
-          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d62/Epithelial%20cell%20v1.cellml/download_omex",
+          omex: "https://models.physiomeproject.org/e/d62/Epithelial%20cell%20v1.cellml/download_omex",
           documentation: "https://models.physiomeproject.org/e/d62/Epithelial%20cell%20v1.cellml/view",
           image: "https://models.physiomeproject.org/e/d62/model-diagram.png",
           label: "Epithelial cell transport",
@@ -122,7 +122,7 @@ export default {
         },
         {
           id: "epithelial-p2",
-          omex: "https://corsproxy.io/?url=https://models.physiomeproject.org/e/d62/Na-Glc-BC/epithelial-cell-capilliary-bc.cellml/download_omex",
+          omex: "https://models.physiomeproject.org/e/d62/Na-Glc-BC/epithelial-cell-capilliary-bc.cellml/download_omex",
           documentation: "https://models.physiomeproject.org/e/d62/Na-Glc-BC/epithelial-cell-capilliary-bc.cellml/view",
           image: "https://models.physiomeproject.org/e/d62/Na-Glc-BC/model-diagram-with-bc.png",
           label: "Epithelial cell transport + BC",
