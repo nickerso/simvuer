@@ -77,6 +77,13 @@ export default {
       apiLocation: "",
       combineArchives: [],
       datasetUrls: [
+        { id: "glucose-step-change", 
+          omex: "https://github.com/nickerso/glucose-uptake-in-enterocyte/raw/refs/heads/glucose-step-change/glucose-step-change/glucose-step-change.zip", 
+          label: "Mucosal glucose", 
+          description: "To be written.",
+          documentation: "https://doi.org/10.36903/physiome.13034423",
+          image: "https://pub.curvenote.com/9faa21de-4b72-46bd-bce7-93a2f0c7f0f9/public/fig01-3024884512d598c244dfc47f269e8098.webp"
+        },
         { id: "sparc-dataset-135", 
           omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/135.omex", 
           label: "Human SAN", 
@@ -92,8 +99,6 @@ export default {
           documentation: "https://doi.org/10.26275/lj3f-erhp",
           image: "https://assets.discover.pennsieve.io/dataset-assets/135/8/banner.jpg"
         },
-        /*
-        { id: "lorenz-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/lorenz.omex", label: "Lorenz", description: "COMBINE archive" },*/
         { 
           id: "ttnp04-p",
           omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/tt04.omex",
@@ -102,8 +107,6 @@ export default {
           label: "Human ventricular cell", 
           description: "A model for human ventricular tissue, K.H.W.J. ten Tusscher, D. Noble, P.J. Noble, and A.V. Panfilov, 2004, American Journal of Physiology , 286, H1573-H1589. PubMed ID: 14656705. Here we explore the response to changing the stimulation frequency."
         },
-        /*
-        { id: "cvs-p", omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/cvs.omex", label: "CVS", description: "COMBINE archive" },*/
         {
           id: "glut-p",
           omex: "https://models.physiomeproject.org/e/d5d/GLUT_ss_oi_flat.cellml/download_omex",
