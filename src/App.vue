@@ -84,6 +84,13 @@ export default {
           documentation: "https://doi.org/10.36903/physiome.13034423",
           image: "https://pub.curvenote.com/9faa21de-4b72-46bd-bce7-93a2f0c7f0f9/public/fig01-3024884512d598c244dfc47f269e8098.webp"
         },
+        { id: "luminal-glucose-stimulus", 
+          omex: "https://github.com/nickerso/glucose-uptake-in-enterocyte/raw/refs/heads/glucose-step-change/luminal-glucose-stimulus/manifest.zip", 
+          label: "Luminal glucose stimulus", 
+          description: "To be written.",
+          documentation: "https://doi.org/10.36903/physiome.13034423",
+          image: "https://pub.curvenote.com/9faa21de-4b72-46bd-bce7-93a2f0c7f0f9/public/fig01-3024884512d598c244dfc47f269e8098.webp"
+        },
         { id: "sparc-dataset-135", 
           omex: "https://raw.githubusercontent.com/opencor/webapp/refs/heads/main/tests/models/ui/135.omex", 
           label: "Human SAN", 
