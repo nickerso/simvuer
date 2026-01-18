@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@abi-software/simulationvuer": "^3.0.7",
+    "@abi-software/simulationvuer": "^3.0.9",
     "element-plus": "2.8.4",
     "vue": "^3.4.21"
   },
