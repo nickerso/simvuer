@@ -77,6 +77,22 @@ export default {
       apiLocation: "",
       combineArchives: [],
       datasetUrls: [
+        { id: "mechanical-system", 
+          omex: "https://github.com/nickerso/simple-mechanical-system/raw/refs/heads/main/FAIRDO%20BG%20example%203.2.zip", 
+          label: "Simple Mechanical System", 
+          description: "This is an example of a simple mechanical system model. As shown in the image on the right, the model consists of a mass-spring-damper system, and the simulation experiment explores the effect of changing parameters on the system's response.",
+          documentation: "https://models.physiomeproject.org/e/b51/",
+          image: "https://github.com/nickerso/simple-mechanical-system/raw/refs/heads/main/system.png"
+        },
+        { id: "tt04-new", 
+          omex: "https://github.com/opencor/webapp/raw/refs/heads/main/tests/models/ui/tt04_with_names.omex", 
+          label: "Human Action Potential", 
+          description: "This is an example of a Human cardiac action potential model. As shown in the image on the right, the model consists of a single cardiac cell, and the simulation experiment stimulates the cell at a regular interval to produce action potentials. You can explore the effect of changing the stimulation frequency on the action potential shape and duration.",
+          documentation: "https://models.physiomeproject.org/e/80c",
+          image: "https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png"
+        }
+      ],
+      old_datasetUrls: [
         { id: "glucose-step-change", 
           omex: "https://github.com/nickerso/glucose-uptake-in-enterocyte/raw/refs/heads/glucose-step-change/glucose-step-change/glucose-step-change.zip", 
           label: "Mucosal glucose", 
