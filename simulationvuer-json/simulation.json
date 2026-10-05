@@ -1,0 +1,72 @@
+{
+  "input": [
+    {
+      "id": "cycle_length",
+      "name": "Cycle length",
+      "defaultValue": 1,
+      "minimumValue": 0.5,
+      "maximumValue": 10,
+      "stepValue": 0.1
+    }
+  ],
+  "output": {
+    "data": [
+      {
+        "id": "time",
+        "name": "environment/time"
+      },
+      {
+        "id": "input_flow",
+        "name": "input_flow_aorticroot_module/v"
+      },
+      {
+        "id": "terminal_venous_flow_left_arm",
+        "name": "arm_L_T_module/v_T"
+      },
+      {
+        "id": "terminal_venous_flow_right_arm",
+        "name": "arm_R_T_module/v_T"
+      },
+      {
+        "id": "terminal_venous_flow_trunk",
+        "name": "trunk_C_T_module/v_T"
+      }
+    ],
+    "plots": [
+      {
+        "xValue": "time",
+        "yValue": "input_flow",
+        "additionalTraces": [],
+        "name": "Input",
+        "yAxisTitle": "m^3 / s"
+      },
+      {
+        "xValue": "time",
+        "yValue": "terminal_venous_flow_left_arm",
+        "additionalTraces": [
+          {
+            "xValue": "time",
+            "yValue": "terminal_venous_flow_right_arm",
+            "name": "Right arm"
+          }
+        ],
+        "yAxisTitle": "m^3 / s",
+        "name": "Left arm"
+      },
+      {
+        "xValue": "time",
+        "yValue": "terminal_venous_flow_trunk",
+        "additionalTraces": [],
+        "yAxisTitle": "m^3 / s",
+        "name": "Trunk"
+      }
+    ],
+    "externalData": []
+  },
+  "parameters": [
+    {
+      "name": "parameters_global/T",
+      "value": "cycle_length"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UiJsonSchema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["input", "output", "parameters"],
+  "properties": {
+    "input": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["defaultValue", "id", "name", "possibleValues"],
+            "properties": {
+              "defaultValue": { "type": "number" },
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "possibleValues": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name", "value"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "value": { "type": "number" }
+                  }
+                }
+              },
+              "visible": { "type": "string" }
+            }
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["defaultValue", "id", "maximumValue", "minimumValue", "name"],
+            "properties": {
+              "defaultValue": { "type": "number" },
+              "id": { "type": "string" },
+              "maximumValue": { "type": "number" },
+              "minimumValue": { "type": "number" },
+              "name": { "type": "string" },
+              "stepValue": { "type": "number" },
+              "visible": { "type": "string" }
+            }
+          }
+        ]
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["data", "plots"],
+      "properties": {
+        "data": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "name"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" }
+            }
+          }
+        },
+        "externalData": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["data", "dataSeries", "voiValues"],
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["id", "name"],
+                  "properties": {
+                    "id": { "type": "string" },
+                    "name": { "type": "string" }
+                  }
+                }
+              },
+              "dataSeries": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name", "values"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "values": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": { "type": "number" }
+                    }
+                  }
+                }
+              },
+              "description": { "type": "string" },
+              "voiExpression": { "type": "string" },
+              "voiValues": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "number" }
+              }
+            }
+          }
+        },
+        "plots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["xValue", "yValue"],
+            "properties": {
+              "xAxisTitle": { "type": "string" },
+              "xValue": { "type": "string" },
+              "yAxisTitle": { "type": "string" },
+              "yValue": { "type": "string" },
+              "name": { "type": "string" },
+              "additionalTraces": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["xValue", "yValue"],
+                  "properties": {
+                    "xValue": { "type": "string" },
+                    "yValue": { "type": "string" },
+                    "name": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "value"],
+        "properties": {
+          "name": { "type": "string" },
+          "value": { "type": "string" }
+        }
+      }
+    }
+  }
+}
