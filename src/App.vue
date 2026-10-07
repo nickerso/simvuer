@@ -64,6 +64,23 @@ import { SimulationVuer } from "@abi-software/simulationvuer";
 import { ElRadioButton, ElRadioGroup, ElDialog } from "element-plus";
 import "@abi-software/simulationvuer/dist/style.css";
 
+const sameOriginUrl = (url) => {
+  if (!url || typeof url !== 'string') {
+    return url;
+  }
+
+  try {
+    const parsed = new URL(url);
+    if (parsed.origin === window.location.origin) {
+      return url;
+    }
+  } catch {
+    return url;
+  }
+
+  return `/proxy?url=${encodeURIComponent(url)}`;
+};
+
 export default {
   name: "App",
   components: {
@@ -82,24 +99,25 @@ export default {
           label: "Simple Mechanical System", 
           description: "This is an example of a simple mechanical system model. As shown in the image on the right, the model consists of a mass-spring-damper system, and the simulation experiment explores the effect of changing parameters on the system's response.",
           documentation: "https://models.physiomeproject.org/e/b51/",
-          image: "https://github.com/nickerso/simple-mechanical-system/raw/refs/heads/main/system.png"
+          image: sameOriginUrl("https://github.com/nickerso/simple-mechanical-system/raw/refs/heads/main/system.png")
         },
         { id: "tt04-new", 
           omex: "https://github.com/opencor/webapp/raw/refs/heads/main/tests/models/ui/tt04_with_names.omex", 
           label: "Human Action Potential", 
           description: "This is an example of a Human cardiac action potential model. As shown in the image on the right, the model consists of a single cardiac cell, and the simulation experiment stimulates the cell at a regular interval to produce action potentials. You can explore the effect of changing the stimulation frequency on the action potential shape and duration.",
           documentation: "https://models.physiomeproject.org/e/80c",
-          image: "https://models.physiomeproject.org/e/80c/ten_tusscher_2004.png"
-        }
-      ],
-      old_datasetUrls: [
+          image: sameOriginUrl("https://models.physiomeproject.org/workspace/605/@@rawfile/0eac6f2330f9ed2ed5a458ac1f6fe8cfc8b7998d/ten_tusscher_2004.png")
+        },
         { id: "glucose-step-change", 
           omex: "https://github.com/nickerso/glucose-uptake-in-enterocyte/raw/refs/heads/glucose-step-change/glucose-step-change/glucose-step-change.zip", 
           label: "Mucosal glucose", 
           description: "To be written.",
           documentation: "https://doi.org/10.36903/physiome.13034423",
-          image: "https://pub.curvenote.com/9faa21de-4b72-46bd-bce7-93a2f0c7f0f9/public/fig01-3024884512d598c244dfc47f269e8098.webp"
+          image: sameOriginUrl("https://pub.curvenote.com/9faa21de-4b72-46bd-bce7-93a2f0c7f0f9/public/fig01-3024884512d598c244dfc47f269e8098.webp")
         },
+        
+      ],
+      old_datasetUrls: [
         { id: "luminal-glucose-stimulus", 
           omex: "https://github.com/nickerso/glucose-uptake-in-enterocyte/raw/refs/heads/glucose-step-change/luminal-glucose-stimulus/manifest.zip", 
           label: "Luminal glucose stimulus", 
