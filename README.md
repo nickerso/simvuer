@@ -29,12 +29,12 @@ npm run dev -- --host 127.0.0.1 --port 4173
 
 Then open:
 
-- http://127.0.0.1:4173/simvuer/
+- http://127.0.0.1:4173/
 
 ### Verify the required headers are present
 
 ```sh
-curl -I http://127.0.0.1:4173/simvuer/
+curl -I http://127.0.0.1:4173/
 ```
 
 You should see the following response headers:
