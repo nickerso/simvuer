@@ -68,7 +68,17 @@ The repo's existing deployment workflow used Node 18, which is too old for the c
 
 The workflow file in `.github/workflows/deploy.yml` should use Node 24.20.0 or newer.
 
-Important: GitHub Pages does not allow setting custom COOP/COEP response headers, so the current `pages` deployment model is not suitable for the threaded-WASM version of SimulationVuer. If this app must work in a browser using the latest package, deploy it to a host that lets you configure those headers instead of plain GitHub Pages.
+For the threaded-WASM release of SimulationVuer, the recommended hosting option is Cloudflare Pages with explicit headers. This keeps the app on GitHub Actions for the build while allowing the deployed site to emit the required COOP/COEP response headers.
+
+For a root-level deployment at `simvuer.pages.dev`, add a `public/_headers` file with:
+
+```txt
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+```
+
+GitHub Pages is not suitable for this app because it does not allow custom COOP/COEP headers on the deployed HTML response.
 
 ## Useful commands
 
