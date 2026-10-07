@@ -1,33 +1,84 @@
-# simvuer
+# SimVuer
 
-This template should help get you started developing with Vue 3 in Vite.
+This app wraps the `@abi-software/simulationvuer` component in a small Vue 3 example for browsing SPARC/COMBINE simulation archives.
 
-## Recommended IDE Setup
+## Requirements
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The latest upstream `simulationvuer` package uses threaded WebAssembly. That requires cross-origin isolation headers on the page:
 
-## Type Support for `.vue` Imports in TS
+- `Cross-Origin-Opener-Policy: same-origin`
+- `Cross-Origin-Embedder-Policy: require-corp`
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+The app already sets these in the Vite dev and preview configs.
 
-## Customize configuration
+For compatibility with the current upstream package, use Node 24.20 or newer.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Local development
 
-## Project Setup
+### Install dependencies
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Start the app in development mode
 
 ```sh
-npm run dev
+npm run dev -- --host 127.0.0.1 --port 4173
 ```
 
-### Type-Check, Compile and Minify for Production
+Then open:
+
+- http://127.0.0.1:4173/simvuer/
+
+### Verify the required headers are present
+
+```sh
+curl -I http://127.0.0.1:4173/simvuer/
+```
+
+You should see the following response headers:
+
+```http
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Embedder-Policy: require-corp
+```
+
+## Production build
 
 ```sh
 npm run build
 ```
+
+To preview the production build locally:
+
+```sh
+npm run preview -- --host 127.0.0.1 --port 4173
+```
+
+## Why the headers matter
+
+`simulationvuer` depends on `@opencor/opencor` and threaded WASM. Without the COOP/COEP headers, libOpenCOR cannot initialize correctly in the browser.
+
+The Vite config is set up for this, but if you deploy the app behind a different server (Apache, Nginx, custom hosting) you must also ensure those headers are sent for the HTML page that loads the app.
+
+## GitHub Actions / deployment notes
+
+The repo's existing deployment workflow used Node 18, which is too old for the current upstream SimulationVuer package. Update it to a recent 24.x runtime before pushing changes.
+
+The workflow file in `.github/workflows/deploy.yml` should use Node 24.20.0 or newer.
+
+Important: GitHub Pages does not allow setting custom COOP/COEP response headers, so the current `pages` deployment model is not suitable for the threaded-WASM version of SimulationVuer. If this app must work in a browser using the latest package, deploy it to a host that lets you configure those headers instead of plain GitHub Pages.
+
+## Useful commands
+
+```sh
+npm install
+npm run dev -- --host 127.0.0.1 --port 4173
+npm run build
+npm run preview -- --host 127.0.0.1 --port 4173
+```
+
+## Editor notes
+
+This project is configured for Vue 3 + Vite. If you are using VS Code, the Vue extension and Volar are recommended for the best editor experience.

@@ -1,6 +1,6 @@
 {
   "name": "simvuer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,9 +11,10 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "@abi-software/simulationvuer": "^3.0.9",
+    "@abi-software/simulationvuer": "^4.3.0",
     "element-plus": "2.8.4",
-    "vue": "^3.4.21"
+    "vue": "^3.5.41",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.0.0",
